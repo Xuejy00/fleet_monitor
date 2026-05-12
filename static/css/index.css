@@ -131,6 +131,18 @@ section.hero {
   margin-bottom: -1.2rem;
 }
 
+.abstract-heading {
+  margin-bottom: -2.4rem;
+}
+
+.abstract-section .hero-body {
+  padding-top: 1.2rem;
+}
+
+.framework-heading {
+  margin-top: 2.8rem;
+}
+
 .content p {
   font-size: 1rem;
 }
@@ -203,6 +215,18 @@ section.hero {
 
   .section-heading-tight {
     margin-bottom: -0.8rem;
+  }
+
+  .abstract-heading {
+    margin-bottom: -1.8rem;
+  }
+
+  .abstract-section .hero-body {
+    padding-top: 1rem;
+  }
+
+  .framework-heading {
+    margin-top: 2.2rem;
   }
 
   .content.has-text-justified {
