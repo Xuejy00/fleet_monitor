@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Intention-aware monitoring of dynamic targets with bounded uncertainty and minimum fleet.">
+  <meta property="og:title" content="Intention-aware Monitoring of Dynamic Targets with Bounded Uncertainty and Minimum Fleet">
+  <meta property="og:description" content="A distributed task and motion coordination framework for monitoring dynamic targets with bounded uncertainty and a minimum active fleet.">
+  <meta property="og:url" content="https://xuejy00.github.io/fleet_monitor/">
+  <meta property="og:image" content="static/images/distmon/snap_1.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:title" content="Intention-aware Monitoring of Dynamic Targets">
+  <meta name="twitter:description" content="Distributed intention-aware monitoring with bounded uncertainty and minimum fleet size.">
+  <meta name="twitter:image" content="static/images/distmon/snap_1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="multi-agent systems, active monitoring, temporal logic, Bayesian inference, distributed coordination, nonlinear MPC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Intention-aware Monitoring of Dynamic Targets</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="font-size: 36px;">
+              Intention-aware Monitoring<br>
+              of Dynamic Targets<br>
+              with Bounded Uncertainty<br>
+              and Minimum Fleet
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#" target="_blank">Shuaikang Wang</a>,
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank">Jianyang Xue</a>,
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yiannis Kantaros</a> and
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank">Meng Guo</a>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Peking University &nbsp; | &nbsp; Washington University in St. Louis</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/paper.pdf" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#simulation-video"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title is-3 has-text-centered section-heading-tight">Abstract</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                Long-term monitoring of large areas with a minimum number of agents is a
+                prerequisite for surveillance, search and rescue, and persistent robotic
+                observation. This work studies fleets that can actively track only a limited
+                number of targets while the targets move through a road network to accomplish
+                unknown high-level temporal tasks.
+              </p>
+              <p>
+                We propose an integrated and distributed task and motion coordination
+                algorithm composed of online Bayesian inference of task-level intentions,
+                intention-aware Kalman prediction, distributed coordination based on local
+                Nash stability, and event-triggered nonlinear model predictive control.
+                The closed loop explicitly bounds target-estimation uncertainty, makes
+                intention inference converge to the actual tasks, and lets agents switch
+                between active and inactive roles online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3 has-text-centered">Scenario</h2>
+          <img class="paper-image scenario-image" src="static/images/distmon/snap_1.png" alt="Monitoring scenario with UAVs, dynamic targets, static hubs, uncertainty, and local plans.">
+          <h2 class="subtitle has-text-centered">
+            <br>
+            Twenty-five UAVs monitor dynamic targets and static hubs on a road network while minimizing the number of active agents.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title is-3 has-text-centered section-heading-tight">Framework</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/overall.png" alt="Overview of the proposed intention-aware monitoring framework.">
+            <h2 class="subtitle has-text-centered">
+              <br>
+              Observation feeds Bayesian intention inference and EKF prediction; local shuffle,
+              give, and swap operations coordinate tasks; ENMPC generates bounded-uncertainty trajectories.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="simulation-video" class="title is-3 has-text-centered section-heading-tight">Simulation Video</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="video-container">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+                <source src="static/videos/sim_video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              The demo shows the nominal 25-agent, 25-target road-network experiment with
+              active fleet size, assignment evolution, task posteriors, and uncertainty traces.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title is-3 has-text-centered section-heading-tight">Overall Performance</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/overall_result.png" alt="Active agents, dynamic target uncertainties, and static hub timers over time.">
+            <h2 class="subtitle has-text-centered">
+              The active fleet decreases as intention estimates improve, while dynamic-target
+              uncertainties and static-hub timers remain within their admissible ranges.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title is-3 has-text-centered section-heading-tight">Distributed Coordination</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/assign_result.png" alt="Distributed task assignment schedule and local operation counts.">
+            <h2 class="subtitle has-text-centered">
+              A representative coordination episode converges through local shuffle, give,
+              and swap operations, deploying a compact active fleet for the current target set.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title is-3 has-text-centered section-heading-tight">Intention Inference and Scaling</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/intent_result.png" alt="Posterior evolution for dynamic targets.">
+            <h2 class="subtitle has-text-centered">
+              Target-task posteriors concentrate from uniform priors toward the ground-truth temporal tasks.
+            </h2>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/compare_result.png" alt="Baseline comparison as the number of targets increases.">
+            <h2 class="subtitle has-text-centered">
+              Compared with baselines, the proposed method keeps planning time low and uses fewer active agents as the monitoring workload increases.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              following the style of the CustFields project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
