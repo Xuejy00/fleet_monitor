@@ -124,41 +124,6 @@
     </div>
   </section>
 
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3 has-text-centered">Scenario</h2>
-          <img class="paper-image scenario-image" src="static/images/distmon/scenario.png" alt="Monitoring scenario with UAVs, dynamic targets, static hubs, uncertainty, and local plans.">
-          <h2 class="subtitle has-text-centered">
-            <br>
-            Twenty-five UAVs monitor dynamic targets and static hubs on a road network while minimizing the number of active agents.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <h2 class="title is-3 has-text-centered section-heading-tight scenario-video-heading">Scenario Video</h2>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/scenario.png">
-                <source src="static/videos/total_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <h2 class="subtitle has-text-centered">
-              The scenario video shows the road-network monitoring process corresponding to the scenario figure above.
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <h2 class="title is-3 has-text-centered section-heading-tight framework-heading">Framework</h2>
   <section class="hero">
     <div class="hero-body">
@@ -177,14 +142,34 @@
     </div>
   </section>
 
-  <h2 id="simulation-video" class="title is-3 has-text-centered section-heading-tight">Simulation Video</h2>
+  <h2 class="title is-3 has-text-centered section-heading-tight scenario-video-heading">Scenario Video</h2>
   <section class="hero">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered has-text-centered">
           <div class="column">
             <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/total_video_first_frame.jpg">
+                <source src="static/videos/total_video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              The scenario video shows the road-network monitoring process corresponding to the scenario figure above.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="simulation-video" class="title is-3 has-text-centered section-heading-tight">Simulation Detail</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="video-container">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/sim_video_first_frame.jpg">
                 <source src="static/videos/sim_video.mp4" type="video/mp4">
               </video>
             </div>
@@ -198,31 +183,35 @@
     </div>
   </section>
 
-  <h2 class="title is-3 has-text-centered section-heading-tight">PBA Complexity Simulation Test</h2>
+  <h2 class="title is-3 has-text-centered section-heading-tight">Complexity of Product Büchi Automata</h2>
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column">
             <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/exp2_A_road_network_complexity_first_frame.jpg">
                 <source src="static/videos/exp2_A_road_network_complexity.mp4" type="video/mp4">
               </video>
             </div>
             <h2 class="subtitle has-text-centered">
-              Experiment 2A: Road-network complexity scaling.
+              Experiment 2A varies the size of the road network to evaluate how the
+              product automaton grows as the target motion model becomes more complex.
+              The test isolates the effect of network topology on online intention inference.
             </h2>
           </div>
         </div>
         <div class="columns is-centered has-text-centered">
           <div class="column">
             <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/exp2_B_task_count_scaling_first_frame.jpg">
                 <source src="static/videos/exp2_B_task_count_scaling.mp4" type="video/mp4">
               </video>
             </div>
             <h2 class="subtitle has-text-centered">
-              Experiment 2B: Task-count scaling.
+              Experiment 2B increases the number of candidate temporal tasks while keeping
+              the road network fixed, showing how the inference module scales with richer
+              task hypotheses and larger PBA state spaces.
             </h2>
           </div>
         </div>
@@ -230,31 +219,35 @@
     </div>
   </section>
 
-  <h2 class="title is-3 has-text-centered section-heading-tight">Robustness Simulation to Irrational Dynamic Targets</h2>
+  <h2 class="title is-3 has-text-centered section-heading-tight">Robustness of Intention-aware Monitoring</h2>
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column">
             <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/exp3_case_5_random_targets_first_frame.jpg">
                 <source src="static/videos/exp3_case_5_random_targets.mp4" type="video/mp4">
               </video>
             </div>
             <h2 class="subtitle has-text-centered">
-              Experiment 3: A subset of dynamic targets may randomly deviate at intersections.
+              Experiment 3 tests robustness when only a subset of dynamic targets behaves
+              inconsistently with the inferred temporal task. The monitoring team responds
+              by updating beliefs online and reallocating active agents as needed.
             </h2>
           </div>
         </div>
         <div class="columns is-centered has-text-centered">
           <div class="column">
             <div class="video-container">
-              <video controls playsinline preload="metadata" poster="static/images/distmon/hero_frame.jpg">
+              <video controls playsinline preload="metadata" poster="static/images/distmon/exp4_case_5_percent_random_turn_first_frame.jpg">
                 <source src="static/videos/exp4_case_5_percent_random_turn.mp4" type="video/mp4">
               </video>
             </div>
             <h2 class="subtitle has-text-centered">
-              Experiment 4: All dynamic targets may randomly deviate at intersections.
+              Experiment 4 applies random intersection deviations to all dynamic targets,
+              stressing the closed-loop coupling between intention inference, distributed
+              assignment, and uncertainty-bounded trajectory optimization.
             </h2>
           </div>
         </div>
@@ -310,9 +303,25 @@
         </div>
         <div class="columns is-centered has-text-centered">
           <div class="column">
+            <img class="paper-image" src="static/images/distmon/weight_result.png" alt="Road intersection weights inferred from target trajectories.">
+            <h2 class="subtitle has-text-centered">
+              Road-intersection weights evolve with the inferred target intentions and guide downstream assignment and routing.
+            </h2>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
             <img class="paper-image" src="static/images/distmon/compare_result.png" alt="Baseline comparison as the number of targets increases.">
             <h2 class="subtitle has-text-centered">
               Compared with baselines, the proposed method keeps planning time low and uses fewer active agents as the monitoring workload increases.
+            </h2>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img class="paper-image" src="static/images/distmon/baseline_compare.png" alt="Baseline comparison table.">
+            <h2 class="subtitle has-text-centered">
+              The baseline comparison table summarizes success rate, planning time, fleet size, and monitoring effort across methods.
             </h2>
           </div>
         </div>
